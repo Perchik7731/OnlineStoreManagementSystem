@@ -1,0 +1,36 @@
+﻿<Window x:Class="OnlineStoreManagementSystem.StoreWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnlineStoreManagementSystem"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+            Title="Магазин" Height="600" Width="800" WindowStartupLocation="CenterScreen"
+    ResizeMode="NoResize">
+    <Grid>
+        <StackPanel Width="200" HorizontalAlignment="Left">
+            <Button x:Name="OpenAdminWindow" Content="Администратор" Margin="10" FontSize="13" Height="49" Width="150"  Click="OpenAdminWindow_Click"/>
+            <Button x:Name="OpenManagerWindow" Content="Менеджер" Margin="10" FontSize="13" Height="49" Width="150"  Click="OpenManagerWindow_Click"/>
+            <Button x:Name="OpenOperatorWindow" Content="Оператор" Margin="10" FontSize="13" Height="49" Width="150"  Click="OpenOperatorWindow_Click"/>
+            <Button x:Name="TrackTheOrder" Content="Отследить заказ" Margin="10" FontSize="12" Height="49" Width="150" Click="TrackTheOrder_Click"/>
+        </StackPanel>
+        <StackPanel Width="600" HorizontalAlignment="Right">
+            <TextBox x:Name="NameYourProduct" Text="Поиск" FontSize="22" Height="70" Margin="0,0,0,0"/>
+            <Button x:Name="SearchProduct" Content="Найти" Height="40" Margin="10" Width="100" HorizontalAlignment="Right" Click="SearchProduct_Click"/>
+            <DataGrid x:Name="ProductsGrid" Margin="10" Height="200" AutoGenerateColumns="False" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Path=NameProduct}"/>
+                    <DataGridTextColumn Header="Цена (руб.)" Binding="{Binding Path=PriceProduct}"/>
+                    <DataGridTextColumn Header="Описание" Binding="{Binding Path=DescriptionProduct}"/>
+                    <DataGridTextColumn Header="Категория" Binding="{Binding Path=CategoryProduct}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="GetProduct" Content="Взять товар" Margin="10" FontSize="12" Width="150" Click="GetProduct_Click"/>
+            <Button x:Name="OpenBasket" Content="Корзина" Margin="10" FontSize="12" Width="150" Click="OpenBasket_Click"/>
+            <Button x:Name="ExitFromAccount" Content="Выйти" Margin="10" Width="150"  Click="ExitFromAccount_Click"/>
+        </StackPanel>
+
+
+    </Grid>
+</Window>

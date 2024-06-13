@@ -1,0 +1,19 @@
+﻿<Window x:Class="OnlineStoreManagementSystem.AdminWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnlineStoreManagementSystem"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+            Title="Окно админа" Height="500" Width="400" WindowStartupLocation="CenterScreen"
+    ResizeMode="NoResize">
+    <Grid>
+        <StackPanel Margin="10">
+            <Button x:Name="OpenReportsWindow" Content="Отчёты" Height="50" Margin="10,100,10,10" Width="200" Click="OpenReportsWindow_Click"/>
+            <Button x:Name="OpenUsersWindow" Height="50" Margin="10" Content="Пользователи" Width="200" Click="OpenUsersWindow_Click"/>
+            <Button x:Name="OpenProductsWindow" Height="50" Margin="10" Content="Товары" Width="200" Click="OpenProductsWindow_Click"/>
+            <Button x:Name="Back" Grid.Column="1" Height="50" Margin="10" Content="Назад" Width="200" Click="Back_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

@@ -1,0 +1,34 @@
+﻿<Window x:Class="OnlineStoreManagementSystem.BasketWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnlineStoreManagementSystem"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        mc:Ignorable="d"
+            Title="Корзина" Height="500" Width="600" WindowStartupLocation="CenterScreen"
+    ResizeMode="NoResize">
+    <Grid>
+        <StackPanel>
+            <DataGrid x:Name="BasketGrid" AutoGenerateColumns="False" Height="200" Margin="10" IsReadOnly="True">
+                <DataGrid.Columns>
+                    <DataGridTemplateColumn Header="Изображение" Width="SizeToCells">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Image Source="{Binding Path=Products.PhotoProduct}" MaxWidth="100" MaxHeight="100"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                    <DataGridTextColumn Header="Название" Binding="{Binding Path=Products.NameProduct}"/>
+                    <DataGridTextColumn Header="Цена (руб.)" Binding="{Binding Path=Products.PriceProduct}"/>
+                    <DataGridTextColumn Header="Описание" Binding="{Binding Path=Products.DescriptionProduct}"/>
+                    <DataGridTextColumn Header="Категория" Binding="{Binding Path=Products.CategoryProduct}"/>
+                    <DataGridTextColumn Header="Колличество (шт.)" Binding="{Binding Path=Count}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="Back" Height="50" Margin="10" Width="200" Content="Назад" HorizontalAlignment="Center" Click="Back_Click"/>
+            <Button x:Name="CompleteOrder" Height="50" Margin="10" Width="200" HorizontalAlignment="Center" Content="Сформировать заказ" Click="CompleteOrder_Click"/>
+            <Button x:Name="DeleteProduct" Height="50" Margin="10" Width="200" HorizontalAlignment="Center" Content="Удалить" Click="DeleteProduct_Click"/>
+        </StackPanel>
+    </Grid>
+</Window>

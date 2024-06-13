@@ -1,0 +1,22 @@
+﻿<Window x:Class="OnlineStoreManagementSystem.DeliveryPointWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:OnlineStoreManagementSystem"
+        mc:Ignorable="d"
+            Title="Доставка" Height="500" Width="500" WindowStartupLocation="CenterScreen"
+    ResizeMode="NoResize">
+    <Grid>
+        <StackPanel Margin="10">
+            <DataGrid x:Name="DeliveryPointsGrid" Height="200" Width="400" AutoGenerateColumns="False" IsReadOnly="True" SelectionChanged="DeliveryPointsGrid_SelectionChanged">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="Выберите пункт выдачи" Binding="{Binding Path=NamePoint}"/>
+                </DataGrid.Columns>
+            </DataGrid>
+            <Button x:Name="Back" Content="Назад" Height="46" Width="200" Margin="0,10,0,0" Click="Back_Click"/>
+            <Button x:Name="CompleteTotalOrder" Content="Завершить и оплатить" Width="200" Height="46" Margin="0,10,0,0"  Click="CompleteTotalOrder_Click"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
